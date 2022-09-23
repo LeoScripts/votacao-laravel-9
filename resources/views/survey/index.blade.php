@@ -14,7 +14,9 @@
                     @endauth
 
                     @foreach($survey as $surveyItem)
-                        $surveyItem->name
+                       <div>
+                        {{$surveyItem->name}} <br>
+                       </div>
                     @endforeach
                 </div>
             </div>

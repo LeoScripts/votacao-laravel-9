@@ -13,7 +13,7 @@ class StoreSurvelRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class StoreSurvelRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'min:3|max:50|required|',
+            'description' => 'required',
+            'initialTime' => 'required',
+            'endTime' => 'required',
         ];
     }
 }

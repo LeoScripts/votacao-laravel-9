@@ -38,7 +38,9 @@ class SurvelController extends Controller
      */
     public function store(StoreSurvelRequest $request)
     {
+        $data = Survel::create($request->all());
 
+        return redirect()->route('survey.index');
     }
 
     /**
