@@ -15,7 +15,9 @@ class SurvelController extends Controller
      */
     public function index()
     {
-        //
+        $survey = Survel::all();
+
+        return view('survey.index',compact('survey'));
     }
 
     /**
@@ -25,7 +27,7 @@ class SurvelController extends Controller
      */
     public function create()
     {
-        //
+        return view('survey.create');
     }
 
     /**
@@ -36,7 +38,7 @@ class SurvelController extends Controller
      */
     public function store(StoreSurvelRequest $request)
     {
-        //
+
     }
 
     /**

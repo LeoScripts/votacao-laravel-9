@@ -17,7 +17,10 @@ class SurvelFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => 'test',
+            'description' => 'testDescription',
+            'initialTime' => '2022-09-23 17:09:28',
+            'endTime' => '2022-09-23 17:09:28'
         ];
     }
 }

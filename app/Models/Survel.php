@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Survel extends Model
 {
     use HasFactory;
+
+    protected $table = 'survey';
+    protected $fillable = [
+        'name',
+        'description',
+        'initialTime',
+        'endTime'
+    ];
 }
