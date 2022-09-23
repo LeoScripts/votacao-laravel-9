@@ -29,8 +29,5 @@ class RegistrationTest extends TestCase
         $user = User::factory()->create();
         $this->actingAs($user);
         $this->assertAuthenticated();
-
-        $response = $this->get('/dashboard');
-        $response->assertOk();
     }
 }

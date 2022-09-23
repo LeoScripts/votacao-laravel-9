@@ -22,4 +22,16 @@ class SurveyAllTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+        /**
+     * A basic feature test example.
+     *
+     * @test
+     */
+    public function rendering_register_survey()
+    {
+        $response = $this->get('survey/create');
+
+        $response->assertOk();
+    }
 }
