@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class SurveyTest extends TestCase
+class SurveyAllTest extends TestCase
 {
 
     // aqui estou usando a notation @test
