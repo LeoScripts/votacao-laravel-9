@@ -10,14 +10,16 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     @auth
-                        <b>{{Auth::user()->name}}</b>  aqui estao as respostas
+                        <b>{{Auth::user()->name}}</b>  aqui estao as respostas <br>
                     @endauth
 
+                    <a style="background: rgb(0, 234, 255)" href="{{ route('answer.create') }}">Nova Resposta</a>
                     @foreach($answer as $answerItem)
                        <div>
                         {{$answerItem->answer}} <br>
                        </div>
                     @endforeach
+
                 </div>
             </div>
         </div>

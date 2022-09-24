@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('question_id');
             $table->text('answer');
             $table->timestamps();
-            $table->foreign('user_id')
+            $table->foreign('question_id')
                 ->references('id')
-                ->on('users')
+                ->on('questions')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });

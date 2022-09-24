@@ -6,17 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Answer;
 
-class Survel extends Model
+class Question extends Model
 {
     use HasFactory;
 
-    protected $table = 'survey';
-    protected $fillable = [
-        'name',
-        'description',
-        'initialTime',
-        'endTime'
-    ];
+    protected $fillable = ['question', 'initial_date', 'end_date'];
 
     public function answer()
     {

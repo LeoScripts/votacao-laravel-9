@@ -10,12 +10,13 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     @auth
-                        <b>{{Auth::user()->name}}</b> estas sao as enquetes
+                        <b>{{Auth::user()->name}}</b> estas sao as enquetes <br>
                     @endauth
 
-                    @foreach($survey as $surveyItem)
+                    <a style="background: rgb(0, 234, 255)" href="{{ route('question.create') }}">Nova Pergunta</a>
+                    @foreach($question as $questionItem)
                        <div>
-                        {{$surveyItem->name}} <br>
+                        {{$questionItem->question}} <br>
                        </div>
                     @endforeach
                 </div>

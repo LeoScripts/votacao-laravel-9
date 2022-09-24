@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Enquetes') }}
+            {{ __('Nova Enquete') }}
         </h2>
     </x-slot>
 
@@ -12,13 +12,11 @@
 
                     Criar nova enquete
 
-                    <form action="{{ route('survey.store') }}" method="POST">
+                    <form action="{{ route('answer.store') }}" method="POST">
                         @csrf
                         <div>
-                            <input name="name" type="text" placeholder="nome" >
-                            <input name="description" type="text" placeholder="descrição" >
-                            <input name="initialTime" type="date">
-                            <input name="endTime" type="date" >
+                            <input name="answer" type="text" placeholder="Sua resposta" >
+                            <input name="question_id" type="number" placeholder="id da pergunta">
                         </div>
 
                         <button style="background: rgba(102, 255, 171, 0.582); padding:0.250rem;border-radius: 0.5rem" type="submit">Cadastrar</button>

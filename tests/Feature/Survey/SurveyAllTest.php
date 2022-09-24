@@ -5,7 +5,7 @@ namespace Tests\Feature\Survey;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use App\Models\Survel;
+use App\Models\Survey;
 use App\Models\User;
 
 class SurveyAllTest extends TestCase
@@ -56,7 +56,7 @@ class SurveyAllTest extends TestCase
         $this->actingAs($user);
         $this->assertAuthenticated();
 
-        $newSurvey = Survel::factory()->create();
+        $newSurvey = Survey::factory()->create();
     }
 
 }

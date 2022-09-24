@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SurvelController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\AnswerController;
 
+require __DIR__.'/auth.php';
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('/survey', SurvelController::class)->middleware(['auth']);
+Route::resource('/question', QuestionController::class)->middleware(['auth']);
 Route::resource('/answer', AnswerController::class)->middleware(['auth']);
 
-require __DIR__.'/auth.php';
