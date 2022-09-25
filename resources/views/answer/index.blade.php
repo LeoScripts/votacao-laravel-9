@@ -15,7 +15,8 @@
 
                     <a style="background: rgb(0, 234, 255)" href="{{ route('answer.create') }}">Nova Resposta</a>
                     @foreach($answer as $answerItem)
-                       <div>
+                       <div >
+                        <p style="background: #f693">{{ $answerItem->question->question }} - {{ $answerItem->question->initial_date }} - {{ $answerItem->question->end_date }} </p>
                         {{$answerItem->answer}} <br>
                        </div>
                     @endforeach

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Survey;
+use App\Models\Question;
 
 
 class Answer extends Model
@@ -16,8 +16,8 @@ class Answer extends Model
         'answer',
     ];
 
-    public function survey()
+    public function question()
     {
-        return $this->belongsTo(Survey::class);
+        return $this->belongsTo(Question::class);
     }
 }
