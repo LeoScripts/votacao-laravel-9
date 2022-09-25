@@ -24,7 +24,7 @@ class StoreAnswerRequest extends FormRequest
     public function rules()
     {
         return [
-            'answer' => 'min:3|max:40|required|'
+            'answer' => 'max:40|required|'
         ];
     }
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreAnswerRequest;
 use App\Http\Requests\UpdateAnswerRequest;
 use App\Models\Answer;
-use App\Models\Survey;
+use App\Models\Question;
 
 class AnswerController extends Controller
 {
@@ -32,7 +32,8 @@ class AnswerController extends Controller
      */
     public function create()
     {
-        return view('answer.create');
+        $questions = Question::all();
+        return view('answer.create', compact('questions'));
     }
 
     /**
