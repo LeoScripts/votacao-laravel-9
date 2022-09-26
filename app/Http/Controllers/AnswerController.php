@@ -10,9 +10,10 @@ use App\Models\Question;
 class AnswerController extends Controller
 {
 
-    public function __construct(Answer $answer)
+    public function __construct(Answer $answer, Question $question)
     {
         $this->model = $answer;
+        $this->question = $question;
     }
     /**
      * Display a listing of the resource.
@@ -21,8 +22,8 @@ class AnswerController extends Controller
      */
     public function index()
     {
-        $answer = $this->model->all();
-        return view('answer.index', compact('answer'));
+        $questions = $this->question->all();
+        return view('answer.index', compact('questions'));
     }
 
     /**
@@ -32,7 +33,7 @@ class AnswerController extends Controller
      */
     public function create()
     {
-        $questions = Question::all();
+        $questions = $this->question->all();
         return view('answer.create', compact('questions'));
     }
 

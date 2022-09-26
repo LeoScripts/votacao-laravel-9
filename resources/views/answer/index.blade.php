@@ -14,11 +14,19 @@
                     @endauth
 
                     <a style="background: rgb(0, 234, 255)" href="{{ route('answer.create') }}">Nova Resposta</a>
-                    @foreach($answer as $answerItem)
-                       <div >
-                        <p style="background: #f693">{{ $answerItem->question->question }} - {{ $answerItem->question->initial_date }} - {{ $answerItem->question->end_date }} </p>
-                        {{$answerItem->answer}} <br>
-                       </div>
+
+                    @foreach($questions as $qItem)
+
+                        <div style="background: #f693; margin:0.25rem; padding:0.5rem; border-radius:0.5rem;">
+                            <b>{{ $qItem->question}} - incio: {{ $qItem->initial_date }} - encerramento: {{ $qItem->end_date }} </b>
+
+                            <div style="display: flex;">
+                                @foreach ($qItem->answer as $aItem)
+                                    <p style="background: #fff; margin:0.25rem; padding:0.5rem 1rem; border-radius:0.5rem; width:7rem; text-align:center;">{{$aItem->answer}}</p>
+                                @endforeach
+                            </div>
+                        </div>
+
                     @endforeach
 
                 </div>
