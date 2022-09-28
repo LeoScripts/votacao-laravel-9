@@ -55,9 +55,7 @@ class QuestionAllTest extends TestCase
         $question = [
             'question' => 'test',
             'initial_date' => '2022-09-28',
-            'end_date' => '2022-09-28',
-            'created_at' => '2022-09-28 12:51:34',
-            'updated_at' => '2022-09-28 12:51:34'
+            'end_date' => '2022-09-28'
         ];
 
         $user = User::factory()->create();
