@@ -20,7 +20,14 @@
 
                             <div style="display: flex;">
                                 @foreach ($qItem->answer as $aItem)
-                                    <p style="background: #fff; margin:0.25rem; padding:0.5rem 1rem; border-radius:0.5rem; max-width:15rem; text-align:center;">{{$aItem->answer}}</p>
+                                    <p style="background: #fff; margin:0.25rem; padding:0.5rem 1rem; border-radius:0.5rem; max-width:15rem; text-align:center;">
+                                        @if($aItem->answer == $aItem->answer)
+                                            {{$aItem->answer .= 1}}
+
+                                        @else
+                                            {{$aItem->answer}}
+                                        @endif
+                                    </p>
                                 @endforeach
                             </div>
                         </div>
