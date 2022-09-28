@@ -24,4 +24,22 @@ class AnswerAllTest extends TestCase
         $response->assertOk();
 
     }
+
+    /**
+     * A basic feature test example.
+     *
+     * @test
+     */
+    public function rendering_create_answers()
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user);
+        $this->assertAuthenticated();
+
+        $response = $this->get('/answer/create');
+        $response->assertOk();
+
+    }
+
+
 }
