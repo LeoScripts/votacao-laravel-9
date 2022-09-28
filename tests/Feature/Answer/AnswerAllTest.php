@@ -22,5 +22,6 @@ class AnswerAllTest extends TestCase
 
         $response = $this->get('/answer');
         $response->assertOk();
+
     }
 }
