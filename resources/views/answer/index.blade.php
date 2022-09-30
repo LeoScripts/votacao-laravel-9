@@ -23,7 +23,6 @@
                                 @foreach (collect($qItem->answer)->unique('answer') as $aItem)
                                     <p style="background: #fff; margin:0.25rem; padding:0.5rem 1rem; border-radius:0.5rem; max-width:15rem; text-align:center;">
                                         {{ $aItem->answer }}
-
                                     </p>
                                 @endforeach
                             </div>
