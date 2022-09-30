@@ -11,6 +11,7 @@
                 <a style="background: rgb(0, 234, 255);margin:1rem; padding:0.5rem 1rem; border-radius:0.5rem;text-align:center;max-width:10rem;" href="{{ route('answer.create') }}">Nova Resposta</a>
             </div>
 
+
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     @foreach($questions as $qItem)
@@ -19,19 +20,14 @@
                             <b>{{ $qItem->question}} - incio: {{ $qItem->initial_date }} - encerramento: {{ $qItem->end_date }} </b>
 
                             <div style="display: flex;">
-                                @foreach ($qItem->answer as $aItem)
+                                @foreach (collect($qItem->answer)->unique('answer') as $aItem)
                                     <p style="background: #fff; margin:0.25rem; padding:0.5rem 1rem; border-radius:0.5rem; max-width:15rem; text-align:center;">
-                                        @if($aItem->answer == $aItem->answer)
-                                            {{$aItem->answer .= 1}}
+                                        {{ $aItem->answer }}
 
-                                        @else
-                                            {{$aItem->answer}}
-                                        @endif
                                     </p>
                                 @endforeach
                             </div>
                         </div>
-
                     @endforeach
 
                 </div>

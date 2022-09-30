@@ -17,7 +17,9 @@ class QuestionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'question' => fake()->word(),
+            'initial_date' => fake()->date,
+            'end_date' => fake()->date
         ];
     }
 }

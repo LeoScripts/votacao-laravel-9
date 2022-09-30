@@ -17,7 +17,8 @@ class AnswerFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'answer' => fake()->domainWord(),
+            'question_id' => '1'
         ];
     }
 }
