@@ -24,6 +24,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('/question', QuestionController::class)->middleware(['auth']);
-Route::resource('/answer', AnswerController::class)->middleware(['auth']);
+Route::resource('/question', QuestionController::class)->middleware(['auth'])->middleware('auth');
+Route::resource('/answer', AnswerController::class)->middleware(['auth'])->middleware('auth');
 
