@@ -10,4 +10,9 @@ class Vote extends Model
     use HasFactory;
 
     protected $fillable = ['id_question','id_answer'];
+
+    public function answer()
+    {
+        return $this->belongsToMany();
+    }
 }
