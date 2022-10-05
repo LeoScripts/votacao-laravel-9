@@ -20,8 +20,8 @@ class VoteController extends Controller
      */
     public function index()
     {
-        $votes = this->model->all();
-        dd($votes);
+        $votes = $this->model->all();
+        return view('dashboard', compact('votes'));
     }
 
     /**
