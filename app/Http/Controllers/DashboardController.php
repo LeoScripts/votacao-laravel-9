@@ -17,8 +17,8 @@ class DashboardController extends Controller
     }
     public function index()
     {
-        $data = $this->question->all();
-        $vote = $this->vote->all();
-        return view('dashboard', compact('data','vote'));
+        $questions = $this->question->all();
+        $votes = $this->vote->all();
+        return view('dashboard', compact('questions','votes'));
     }
 }
