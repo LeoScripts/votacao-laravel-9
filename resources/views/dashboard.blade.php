@@ -16,14 +16,22 @@
                             <div class="flex gap-2">
 
                                 @foreach ($qItem->answer as $item)
-                                    <p class="p-2 bg-slate-50 rounded-md">{{ $item->answer }}</p>
+                                    <div class="p-2 bg-slate-50 rounded-md">
+                                        {{ $item->answer }}
+
+                                        @foreach ($vote as $item)
+                                            @if ($item->id_question == $qItem->id)
+                                                <p class="p-1 bg-slate-400 rounded-md">{{ $item->id_answer }}</p>
+                                            @endif
+                                        @endforeach
+                                    </div>
                                 @endforeach
+
+
+
+
                             </div>
                         </div >
-                        @endforeach
-
-                        @foreach ($vote as $item)
-                            <p>{{ $item }}</p>
                         @endforeach
 
 
