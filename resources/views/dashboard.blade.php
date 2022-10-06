@@ -23,7 +23,7 @@
                         @endforeach
 
                         @foreach ($vote as $item)
-                            <p>{{ $item-> }}</p>
+                            <p>{{ $item }}</p>
                         @endforeach
 
 
