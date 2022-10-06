@@ -21,11 +21,12 @@ return new class extends Migration
 
             $table->foreign('id_question')
                 ->references('id')
-                ->on('question');
+                ->on('questions');
+
 
             $table->foreign('id_answer')
                 ->references('id')
-                ->on('answer');
+                ->on('answers');
         });
     }
 

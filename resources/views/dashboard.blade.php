@@ -14,12 +14,19 @@
                            <h2 class="m-3">{{ $qItem->question }}</h2>
 
                             <div class="flex gap-2">
+
                                 @foreach ($qItem->answer as $item)
                                     <p class="p-2 bg-slate-50 rounded-md">{{ $item->answer }}</p>
                                 @endforeach
                             </div>
                         </div >
-                    @endforeach
+                        @endforeach
+
+                        @foreach ($vote as $item)
+                            <p>{{ $item-> }}</p>
+                        @endforeach
+
+
 
                 </div>
             </div>

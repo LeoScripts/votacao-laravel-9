@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Answer;
 
 class Vote extends Model
 {
@@ -13,6 +14,6 @@ class Vote extends Model
 
     public function answer()
     {
-        return $this->belongsToMany();
+        return $this->belongsTo(Answer::class, 'id_answer', 'id');
     }
 }
