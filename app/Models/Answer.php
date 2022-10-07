@@ -15,6 +15,7 @@ class Answer extends Model
     protected $fillable = [
         'question_id',
         'answer',
+        'vote'
     ];
 
     public function question()
@@ -22,8 +23,4 @@ class Answer extends Model
         return $this->belongsTo(Question::class);
     }
 
-    public function vote()
-    {
-        return $this->belongsToMany(Vote::class);
-    }
 }

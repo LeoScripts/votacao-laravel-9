@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('question_id');
             $table->text('answer');
+            $table->integer('vote')->default(0);
             $table->timestamps();
             $table->foreign('question_id')
                 ->references('id')

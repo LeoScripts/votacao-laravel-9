@@ -17,20 +17,7 @@
 
                                 @foreach ($questionItem->answer as $answerItem)
                                     <div class="p-2 bg-slate-50 rounded-md">
-                                        {{ $answerItem->answer }}
-
-                                        @foreach ($votes as $voteItem)
-                                            @if ($voteItem->id_question == $questionItem->id && $voteItem->id_answer == $answerItem->id )
-
-                                                <p class="p-1 bg-slate-400 rounded-md">
-                                                    {{ $voteItem->id_answer  }}
-
-                                                </p>
-                                            @endif
-                                        @endforeach
-
-
-
+                                        {{ $answerItem->answer }} - {{ $answerItem->vote }}
                                     </div>
                                     @endforeach
                                 </div>
