@@ -42,6 +42,10 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,7,101,1) 0%, rgba(9
                     <h1 >Seja bem Vindo(a) ao Enquete</h1>
                 </div>
 
+                <div>
+
+                </div>
+
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
 

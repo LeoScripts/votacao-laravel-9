@@ -23,6 +23,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
 
-Route::resource('/question', QuestionController::class)->middleware(['auth'])->middleware('auth');
-Route::resource('/answer', AnswerController::class)->middleware(['auth'])->middleware('auth');
+Route::resource('/question', QuestionController::class)->middleware(['auth']);
+Route::resource('/answer', AnswerController::class)->middleware(['auth']);
 
