@@ -23,8 +23,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
 
-Route::patch('/vote', [AnswerController::class, 'update'])->middleware(['auth'])->name('vote');
-
 Route::resource('/question', QuestionController::class)->middleware(['auth']);
 Route::resource('/answer', AnswerController::class)->middleware(['auth']);
 

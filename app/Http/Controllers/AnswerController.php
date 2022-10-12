@@ -78,9 +78,18 @@ class AnswerController extends Controller
      * @param  \App\Models\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAnswerRequest $request, Answer $answer)
+    public function update(UpdateAnswerRequest $request, $id)
     {
-        dd('estou aqui');
+        if(!$answerCheck = $this->model->find($id))
+            dd('resposta nao existe');
+
+        $data = $request->only('vote');
+        $data['vote'] = (int)$data['vote'] + 1;
+        
+        dd($data);
+        $this->model->update($data);
+        
+        return redirect()->route('dashboard');
     }
 
     /**

@@ -17,13 +17,13 @@
                                     <div class="p-2 bg-slate-50 rounded-md">
                                         {{ $answerItem->answer }} - {{ $answerItem->vote }}
 
-                                        <form action="{{ route('vote')}}" method="post">
+                                        <form action="{{ route('answer.update', $answerItem->id)}}" method="post">
                                         @method('PATCH')
                                         @csrf
                                             
                                             <input type="hidden" name="question_id" value="{{ $answerItem->question_id }}">
                                             <input type="hidden" name="answer" value="{{ $answerItem->answer }}">
-                                            <input type="hidden" name="vote" value="1">
+                                            <input type="hidden" name="vote" value="{{ $answerItem->vote }}">
 
                                             <button class="bg-green-300 p-2 rounded-full" type="submit">votar</button>
                                         </form>
