@@ -80,8 +80,7 @@ class AnswerController extends Controller
      */
     public function update(UpdateAnswerRequest $request, Answer $answer)
     {
-
-        var_dump($answer);
+        dd('estou aqui');
     }
 
     /**
