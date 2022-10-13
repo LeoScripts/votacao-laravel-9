@@ -24,7 +24,7 @@ class StoreQuestionRequest extends FormRequest
     public function rules()
     {
         return [
-            'question' => 'required | min:3 | max:50 ',
+            'question' => 'required | min:3 | max:100 ',
             'initial_date' => 'required',
             'end_date' => 'required'
         ];
