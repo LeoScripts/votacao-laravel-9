@@ -18,16 +18,13 @@
                                         {{ $answerItem->answer }} - {{ $answerItem->vote }}
 
                                         <form action="{{ route('answer.update', $answerItem->id)}}" method="post">
-                                        @method('PATCH')
-                                        @csrf
-                                            
+                                            @method('PATCH')
+                                            @csrf
                                             <input type="hidden" name="question_id" value="{{ $answerItem->question_id }}">
                                             <input type="hidden" name="answer" value="{{ $answerItem->answer }}">
                                             <input type="hidden" name="vote" value="{{ $answerItem->vote }}">
-
                                             <button class="bg-green-300 p-2 rounded-full" type="submit">votar</button>
                                         </form>
-
                                     </div>
                                 @endforeach
                             </div>

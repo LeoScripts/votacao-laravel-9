@@ -24,7 +24,7 @@ class UpdateAnswerRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+
         ];
     }
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('answer');
             $table->integer('vote')->default(0);
             $table->timestamps();
+            
             $table->foreign('question_id')
                 ->references('id')
                 ->on('questions')

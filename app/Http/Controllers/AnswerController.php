@@ -86,9 +86,7 @@ class AnswerController extends Controller
         $data = $request->only('vote');
         $data['vote'] = (int)$data['vote'] + 1;
         
-        dd($data);
-        $this->model->update($data);
-        
+        $this->model->whereIn('id', [$id])->update($data);
         return redirect()->route('dashboard');
     }
 
