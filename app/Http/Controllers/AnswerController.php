@@ -80,7 +80,7 @@ class AnswerController extends Controller
      */
     public function update(UpdateAnswerRequest $request, $id)
     {
-        if(!$answerCheck = $this->model->find($id))
+        if(!$answerCheck == $this->model->find($id))
             dd('resposta nao existe');
 
         $data = $request->only('vote');

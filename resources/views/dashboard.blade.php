@@ -12,9 +12,9 @@
                     @foreach ($questions as $questionItem)
                         <div class="p-10 m-2 bg-cyan-500">
                            <h2 class="w-[100%]  m-3 relative bottom-5 right-3  text-center text-2xl text-white ">{{ $questionItem->question }}</h2>
-                            <div class="grid grid-cols-1 gap-14">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-4">
                                 @foreach ($questionItem->answer as $answerItem)
-                                    <div class="px-2 bg-slate-50 rounded-md text-center box-border">
+                                    <div class="px-2 bg-slate-50 rounded-md text-center box-border my-5">
                                         <p>
                                             <strong class="relative left-[10px] top-5">{{ $answerItem->answer }} </strong> 
                                             <span class="rounded-full bg-yellow-400 p-1 relative left-4 top-[-18px]">
