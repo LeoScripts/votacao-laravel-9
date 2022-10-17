@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAnswerRequest;
 use App\Http\Requests\UpdateAnswerRequest;
+use Illuminate\Support\Facades\Cookie;
 use App\Models\Answer;
 use App\Models\Question;
 
@@ -80,14 +81,18 @@ class AnswerController extends Controller
      */
     public function update(UpdateAnswerRequest $request, $id)
     {
-        if(!$answerCheck == $this->model->find($id))
-            dd('resposta nao existe');
-
-        $data = $request->only('vote');
-        $data['vote'] = (int)$data['vote'] + 1;
-        
-        $this->model->whereIn('id', [$id])->update($data);
-        return redirect()->route('dashboard');
+        if (!Cookie::has('cookie_vote')) {
+            Cookie::queue('cookie_vote', 'My Laravel Cookie');
+            // if(!$answerCheck == $this->model->find($id))
+            //     dd('resposta nao existe');
+            $data = $request->only('vote');
+            $data['vote'] = (int)$data['vote'] + 1;
+            
+            $this->model->whereIn('id', [$id])->update($data);
+            return redirect()->route('dashboard');
+        }else{
+            dd('voce ja votou');
+        }
     }
 
     /**
