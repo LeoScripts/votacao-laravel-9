@@ -23,7 +23,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
-Route::get('/vote', [QuestionAnswerController::class,'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/vote', [QuestionAnswerController::class,'index'])->middleware(['auth'])->name('vote');
+Route::post('/vote', [QuestionAnswerController::class,'store'])->middleware(['auth'])->name('vote.store');
 
 Route::resource('/question', QuestionController::class)->middleware(['auth']);
 Route::resource('/answer', AnswerController::class)->middleware(['auth']);
