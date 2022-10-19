@@ -27,6 +27,7 @@
                                             @csrf
                                             <input type="hidden" name="question_id" value="{{ $answerItem->question_id }}">
                                             <input type="hidden" name="answer_id" value="{{ $answerItem->id }}">
+                                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
                                             <button class="bg-blue-400 p-2 rounded-full relative top-7 text-white hover:bg-sky-600 hover:scale-110" type="submit">votar</button>
                                         </form>
