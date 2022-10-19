@@ -81,18 +81,17 @@ class AnswerController extends Controller
      */
     public function update(UpdateAnswerRequest $request, $id)
     {
-        if (!Cookie::has('cookie_vote')) {
-            Cookie::queue('cookie_vote', 'My Laravel Cookie');
-            // if(!$answerCheck == $this->model->find($id))
-            //     dd('resposta nao existe');
-            $data = $request->only('vote');
-            $data['vote'] = (int)$data['vote'] + 1;
-            
-            $this->model->whereIn('id', [$id])->update($data);
-            return redirect()->route('dashboard');
-        }else{
-            dd('voce ja votou');
-        }
+        // pegando o valor do cookie
+        // $_COOKIE->nome_do_cookier
+        if (!Cookie::has('cookie_vote') ) 
+            Cookie::queue('cookie_vote', 'votei ');
+
+        $data = $request->only('vote');
+        $data['vote'] = (int)$data['vote'] + 1;
+        
+        $this->model->whereIn('id', [$id])->update($data);
+        return redirect()->route('dashboard');
+
     }
 
     /**

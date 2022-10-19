@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\QuestionAnswerController;
 
 require __DIR__.'/auth.php';
 /*
@@ -22,6 +23,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/vote', [QuestionAnswerController::class,'index'])->middleware(['auth'])->name('dashboard');
 
 Route::resource('/question', QuestionController::class)->middleware(['auth']);
 Route::resource('/answer', AnswerController::class)->middleware(['auth']);
