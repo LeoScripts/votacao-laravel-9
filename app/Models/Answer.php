@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Question;
-use App\Models\Vote;
+use App\Models\QuestionAnswer;
 
 
 class Answer extends Model
@@ -21,6 +21,11 @@ class Answer extends Model
     public function question()
     {
         return $this->belongsTo(Question::class);
+    }
+
+    public function question_answer()
+    {
+        return $this->hasMany(QuestionAnswer::class);
     }
 
 }

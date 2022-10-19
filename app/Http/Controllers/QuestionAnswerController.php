@@ -32,6 +32,7 @@ class QuestionAnswerController extends Controller
     public function store(Request $request)
     {
         $this->model->create($request->only('question_id', 'answer_id'));
+        return redirect()->route('dashboard');
     }
 
     /**

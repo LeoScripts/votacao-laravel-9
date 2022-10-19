@@ -18,11 +18,11 @@
                                         <p>
                                             <strong class="relative left-[10px] top-5">{{ $answerItem->answer }} </strong> 
                                             <span class="rounded-full bg-yellow-400 p-1 relative left-4 top-[-18px]">
-                                                {{ $answerItem->vote }}
+                                                {{ count($answerItem->question_answer) }}
                                             </span>
                                         </p> 
 
-                                        <form action="{{ route('vote')}}" method="post">
+                                        <form action="{{ route('vote.store')}}" method="post">
                                             @method('POST')
                                             @csrf
                                             <input type="hidden" name="question_id" value="{{ $answerItem->question_id }}">
