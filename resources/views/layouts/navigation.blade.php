@@ -15,6 +15,16 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    @if(Auth::user()->isadmin == 1)
+                    <x-nav-link :href="route('question.index')" :active="request()->routeIs('question.index')">
+                        {{ __('Enquente') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('answer.index')" :active="request()->routeIs('answer.index')">
+                        {{ __('Respostas') }}
+                    </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -66,6 +76,7 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
         </div>
 
         <!-- Responsive Settings Options -->
