@@ -18,7 +18,7 @@
 
                     @if(Auth::user()->isadmin == 1)
                     <x-nav-link :href="route('question.index')" :active="request()->routeIs('question.index')">
-                        {{ __('Enquente') }}
+                        {{ __('Enquete') }}
                     </x-nav-link>
 
                     <x-nav-link :href="route('answer.index')" :active="request()->routeIs('answer.index')">

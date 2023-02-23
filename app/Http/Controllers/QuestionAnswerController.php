@@ -36,7 +36,7 @@ class QuestionAnswerController extends Controller
 
         foreach($checkUserVote as $userVotes){
             if($userVotes->question_id  == $request->question_id && $userVotes->user_id == $request->user_id) {
-                return  'Voce ja votou nesta inquete';
+                return  'Voce ja votou nesta enquete';
             }
         }
 

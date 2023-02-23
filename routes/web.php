@@ -7,16 +7,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\QuestionAnswerController;
 
 require __DIR__.'/auth.php';
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,6 +16,6 @@ Route::get('/dashboard', [DashboardController::class,'index'])->middleware(['aut
 Route::get('/vote', [QuestionAnswerController::class,'index'])->middleware(['auth'])->name('vote');
 Route::post('/vote', [QuestionAnswerController::class,'store'])->middleware(['auth'])->name('vote.store');
 
-Route::resource('/question', QuestionController::class)->middleware(['auth']);
-Route::resource('/answer', AnswerController::class)->middleware(['auth']);
+Route::resource('/question', QuestionController::class)->middleware(['auth', 'admin']);
+Route::resource('/answer', AnswerController::class)->middleware(['auth', 'admin']);
 
